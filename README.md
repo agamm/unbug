@@ -43,6 +43,10 @@ _May the force be with you, and find all your pesky bugs :pray:_
 
 Happy coding!
 
+### Local deployment
+
+TBD, but I used `https://smee.io`
+
 ### Extra
 
 I also aquired https://unbug.io, if you want to buy it, let me know :) I might sell it for the right price.

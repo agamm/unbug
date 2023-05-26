@@ -1,4 +1,8 @@
-export async function getBugs(openai: any, sourceCode: string, lang: string) {
+export async function getBugs(
+  openai: any,
+  sourceCode: string,
+  lang = "source"
+) {
   // const GPT_PROMPT_TEMPLATE =
   //   '\n\nCheck if there are bugs or logic errors in the code otherwise return []. Give a short reason for the bug. Return the following JSON format: [{"line": 1, "reason":"..."}, \n\n';
 
