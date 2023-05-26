@@ -16,6 +16,10 @@ const privateKey = fs.readFileSync(
   "utf-8"
 );
 
+/*
+ DOESN'T WORK YET - wanna PR and fix it?
+*/
+
 describe("My Probot app", () => {
   let probot: any;
 
