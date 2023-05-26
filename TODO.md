@@ -2,3 +2,4 @@
 - Add AST parsing of context of change (not to send all code).
 - Add syntax checks before sending to GPT.
 - Fix rerun rerequested check webhook.
+- Work on very big files.
