@@ -14,7 +14,6 @@ jspm_packages/
 
 # Built output
 dist/
-lib/
 coverage/
 .nyc_output/
 *.tgz

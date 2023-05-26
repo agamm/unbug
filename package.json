@@ -12,7 +12,7 @@
     "probot-app"
   ],
   "scripts": {
-    "build": "tsc --version && tsc",
+    "build": " tsc",
     "start": "npm run build && probot run ./dist/index.js",
     "test": "jest",
     "testpr": "npm run build && probot receive -e pull_request -p test/fixtures/pull_request.synchronize.json ./lib/index.js"
