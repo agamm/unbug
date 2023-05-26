@@ -9,7 +9,7 @@ export async function getBugs(
   const messages: ChatCompletionRequestMessage[] = [
     {
       role: "user",
-      content: `You are a senior code reviewer capable of understanding complex code and spotting potential bugs. Your role involves identifying serious bugs, which could include logic errors, performance bugs, security bugs, race conditions, and calculation bugs. Please ensure that your analysis is correct and avoids false positives. Here is some ${lang} code. Remember, we're not looking for stylistic issues, but real bugs that could affect the functionality or security of the application. If you aren't certain about a bug, it's better to return an empty list. When you find a bug, please provide a short reason and its type. The result should be only valid JSON format: [{"line":1,"reason":"short reason", "type":"type"},...]\n\`\`\`\n${sourceCode}\`\`\`\n JSON Result:\n`,
+      content: `You are a senior developer. Check the code for bugs (logic, security, calculation or race condition bugs). If you aren't sure there is a bug return an empty list. The result should be only valid JSON format: [{"line":1,"reason":"short reason", "type":"type"},...]\n\`\`\`\n${sourceCode}\`\`\`\n JSON Result:\n`,
     },
   ];
 
@@ -25,7 +25,6 @@ export async function getBugs(
   let resultParsed = [];
   try {
     resultParsed = JSON.parse(res);
-    console.log("DEBUG", completion.data.choices[0].message, resultParsed);
   } catch (e) {}
   return resultParsed;
 }
