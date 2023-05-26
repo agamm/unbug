@@ -1,10 +1,6 @@
 import { ChatCompletionRequestMessage, OpenAIApi } from "openai";
 
-export async function getBugs(
-  openai: OpenAIApi,
-  sourceCode: string,
-  lang = "source"
-) {
+export async function getBugs(openai: OpenAIApi, sourceCode: string) {
   // Construct the chat messages
   const messages: ChatCompletionRequestMessage[] = [
     {
