@@ -23,7 +23,7 @@ export async function getBugs(
   const res = completion.data?.choices[0]?.message?.content ?? "[]";
   let resultParsed = [];
   try {
-    console.log("BEFORE DEBUG:", res);
+    console.log("BEFORE DEBUG:", JSON.stringify(completion, null, 2));
     resultParsed = JSON.parse(res);
     console.log("DEBUG", completion.data.choices[0].message, resultParsed);
   } catch (e) {}
