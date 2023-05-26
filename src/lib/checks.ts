@@ -15,7 +15,7 @@ export async function runPRChecks(
     console.log(`Got file: ${file.filename}, with  ${file.changes} changes`);
     console.log("Diff:", file.diff);
     const bugs = await getBugs(openai, file.diff);
-    results.push(bugs);
+    results.push(...bugs);
 
     if (bugs.length > 0) hasBugs = true;
   }
