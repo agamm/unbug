@@ -1,8 +1,9 @@
-export async function getBugs(
-  openai: any,
-  sourceCode: string,
-  lang = "source"
-) {
+const { OpenAI } = require("openai");
+
+// Initialize the OpenAI object with your API key
+const openai = new OpenAI("your-openai-api-key");
+
+export async function getBugs(sourceCode: string, lang = "source") {
   // Construct the chat messages
   const messages = [
     {
@@ -17,13 +18,15 @@ export async function getBugs(
   ];
 
   // Create the chat completion
-  const response = await openai.ChatCompletion.create({
+  const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: messages,
     max_tokens: 128,
   });
 
-  const res = response.data["choices"][0]["message"]["content"];
+  console.log(completion.data.choices[0].message);
+
+  const res = completion.data.choices[0].message.content;
   let resultParsed = [];
   try {
     resultParsed = JSON.parse(res);

@@ -57,3 +57,7 @@ TBD, but I used `https://smee.io`
 ### Extra
 
 I also aquired https://unbug.io, if you want to buy it, let me know :) I might sell it for the right price.
+
+### More examples
+
+![image](https://github.com/agamm/unbug/assets/1269911/4b310ad6-81f9-47c0-9f5a-50dec4e1861f)
