@@ -115,6 +115,6 @@ export async function getPRFiles(context: any) {
 
   // Add PR data to file (used later)
   return (files.data ?? []).map((f: Object) => {
-    return { ...f, pr: pr };
+    return { ...f, pr: pr, diff: getPatchedFile(context, f) };
   });
 }
