@@ -43,4 +43,4 @@ _May the force be with you, and find all your pesky bugs :pray:_
 
 ### Extra
 
-I bought https://unbug.io, if you want to buy it, let me know :) I might sell it for the right price.
+I also aquired https://unbug.io, if you want to buy it, let me know :) I might sell it for the right price.
