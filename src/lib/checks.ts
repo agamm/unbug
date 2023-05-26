@@ -12,9 +12,8 @@ export async function runPRChecks(
   for (const file of files) {
     console.log(`Got file: ${file.filename}, with  ${file.changes} changes`);
     console.log("Diff:", file.diff);
+    console.log("Bugs:", await getBugs(openai, file.diff));
   }
-
-  console.log("Bugs:", await getBugs(openai, "test"));
 
   failedCheckRun(context, [
     { reason: "Test", line: 3, path: "/tmp", type: "ValueError" },
