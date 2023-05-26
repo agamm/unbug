@@ -24,6 +24,5 @@ export async function getBugs(
   try {
     resultParsed = JSON.parse(res);
   } catch (e) {}
-  console.log("DEBUG", resultParsed);
   return resultParsed;
 }

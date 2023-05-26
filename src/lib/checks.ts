@@ -1,7 +1,7 @@
 import { OpenAIApi } from "openai";
 import { Context } from "probot";
 import { getBugs } from "./ai";
-import { failedCheckRun, getPRFiles } from "./github"; //successfullCheckRun
+import { failedCheckRun, getPRFiles, successfullCheckRun } from "./github";
 
 export async function runPRChecks(
   context: Context<"pull_request">,
@@ -9,13 +9,20 @@ export async function runPRChecks(
 ) {
   const files = await getPRFiles(context);
 
+  const results = [];
+  let hasBugs = false;
   for (const file of files) {
     console.log(`Got file: ${file.filename}, with  ${file.changes} changes`);
     console.log("Diff:", file.diff);
-    console.log("Bugs:", await getBugs(openai, file.diff));
+    const bugs = await getBugs(openai, file.diff);
+    results.push(bugs);
+
+    if (bugs.length > 0) hasBugs = true;
   }
 
-  failedCheckRun(context, [
-    { reason: "Test", line: 3, path: "/tmp", type: "ValueError" },
-  ]);
+  if (hasBugs) {
+    failedCheckRun(context, results);
+  } else {
+    successfullCheckRun(context);
+  }
 }
