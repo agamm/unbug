@@ -1,5 +1,7 @@
 ## Unbug
 
+![image](https://github.com/agamm/unbug/assets/1269911/4fe94e90-8366-481b-997c-c0e45d0c0e8d)
+
 Got a code base? Want an automatic bug detector that runs during your CI stage on GitHub?
 For free? Just follow the installation step below.
 
@@ -46,6 +48,11 @@ Happy coding!
 ### Local deployment
 
 TBD, but I used `https://smee.io`
+
+### TODO
+
+- Use chatgpt instead of completion models.
+- Add tests.
 
 ### Extra
 
