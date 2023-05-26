@@ -114,9 +114,13 @@ export async function getPRFiles(context: any) {
   });
 
   // Add PR data to file (used later)
-  return (files.data ?? []).map(async (f: any) => {
+  let filesPacked = files.data ?? [];
+  let results = [];
+  for (const f of filesPacked) {
     let file = { ...f, pr: pr };
     file["diff"] = await getPatchedFile(context, file);
-    return file;
-  });
+    results.push(file);
+  }
+
+  return results;
 }
