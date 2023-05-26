@@ -3,23 +3,27 @@ export async function getBugs(
   sourceCode: string,
   lang = "source"
 ) {
-  // const GPT_PROMPT_TEMPLATE =
-  //   '\n\nCheck if there are bugs or logic errors in the code otherwise return []. Give a short reason for the bug. Return the following JSON format: [{"line": 1, "reason":"..."}, \n\n';
+  // Construct the chat messages
+  const messages = [
+    {
+      role: "system",
+      content:
+        "You are a knowledgeable code reviewer capable of understanding complex code and spotting potential bugs. Your role involves identifying serious bugs, which could include logic errors, performance bugs, security bugs, race conditions, and calculation bugs. Please ensure that your analysis is thorough and avoids false positives.",
+    },
+    {
+      role: "user",
+      content: `Here is some ${lang} code. Please review it and identify any serious bugs you find. Remember, we're not looking for stylistic issues, but real bugs that could affect the functionality or security of the application. If you aren't certain about a bug, it's better to return an empty list. When you find a bug, please provide a short reason and its type. The result should be returned in the following JSON format: [{"line":1,"reason":"short reason", "type":"type"},...]\n\`\`\`${lang}\n${sourceCode}\`\`\``,
+    },
+  ];
 
-  const GPT_PROMPT_TEMPLATE = `Act as a senior software developer.\nI will provide some ${lang} code, and it will be your job to identify serious bugs with said code, don\'t fix them. This could involve detecting logic errors, performance bugs, security bugs, race conditions and calculation bugs, not stylistic issues. Add a reason for those bugs. If you aren\'t sure about the bug, return an empty list. Return only a JSON result of bugs in the following format: [{"line":1,"reason":"short reason", "type":"type"},...\n\`\`\`${lang}\n${sourceCode}\`\`\`\n\n`;
-  const prompt = GPT_PROMPT_TEMPLATE;
-
-  const response = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt,
-    temperature: 0,
+  // Create the chat completion
+  const response = await openai.ChatCompletion.create({
+    model: "gpt-3.5-turbo",
+    messages: messages,
     max_tokens: 128,
-    top_p: 1,
-    frequency_penalty: 0,
-    presence_penalty: 0,
   });
 
-  const res = response.data.choices[0].text;
+  const res = response.data["choices"][0]["message"]["content"];
   let resultParsed = [];
   try {
     resultParsed = JSON.parse(res);
