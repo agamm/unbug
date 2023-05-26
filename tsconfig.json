@@ -69,6 +69,6 @@
     "pretty": false,
     "skipLibCheck": true
   },
-  "include": ["src/"],
+  "include": ["src/", "src/**/*.ts"],
   "compileOnSave": false
 }
