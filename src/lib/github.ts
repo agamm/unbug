@@ -75,6 +75,7 @@ export async function failedCheckRun(
   results: GPTResult[],
   name = "Unbug.io - Bug checks"
 ) {
+  console.log("TEST TEST", results);
   await context.octokit.rest.checks.create(
     context.repo({
       name: name,
