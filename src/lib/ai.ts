@@ -1,11 +1,12 @@
-const { OpenAI } = require("openai");
+import { ChatCompletionRequestMessage, OpenAIApi } from "openai";
 
-// Initialize the OpenAI object with your API key
-const openai = new OpenAI("your-openai-api-key");
-
-export async function getBugs(sourceCode: string, lang = "source") {
+export async function getBugs(
+  openai: OpenAIApi,
+  sourceCode: string,
+  lang = "source"
+) {
   // Construct the chat messages
-  const messages = [
+  const messages: ChatCompletionRequestMessage[] = [
     {
       role: "system",
       content:
@@ -24,9 +25,7 @@ export async function getBugs(sourceCode: string, lang = "source") {
     max_tokens: 128,
   });
 
-  console.log(completion.data.choices[0].message);
-
-  const res = completion.data.choices[0].message.content;
+  const res = completion.data?.choices[0]?.message?.content ?? "[]";
   let resultParsed = [];
   try {
     resultParsed = JSON.parse(res);
