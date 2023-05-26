@@ -1,0 +1,3 @@
+- Add AST parsing of context of change (not to send all code). 1 day
+- Add syntax checks before sending to GPT. 0.5 day
+- Fix rerun rerequested check webhook. 0.1 day
