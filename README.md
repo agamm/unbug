@@ -21,7 +21,7 @@ _May the force be with you, and find all your pesky bugs :pray:_
 - Subscribe to "Pull request".
 - Create your App.
 - Now "Generate a private key"
-- Change the .env file to the details (app id, webhook secret and pem file path)
+- Change the .env file to the details (app id, webhook secret...)
 
 3. Deploy to your favorite provider, I'm using render:
    a. Create a new web service (free could also work)
@@ -32,14 +32,16 @@ _May the force be with you, and find all your pesky bugs :pray:_
    - Build command: `npm i`
    - Start command: `npm run start`
 
-   d. Open 'advanced' and click 'Add Secrete File' upload your secret .pem file.
+   d. Open 'advanced' and click 'Add Secrete File' upload your secret .pem file, also add the PRIVATE_KEY secret as an env var.
    e. Deploy (it should not work yet because we need to configure the .evn file)
 
 4. Now let's fix the webhook url, if you use render copy your url and insert it into the .env file and upload it as a secret file again.
 5. It should deploy it again automatically after adding the valid .env file.
 6. Go back to the application page and add the new render url as the webhook url.
-7. Go to your app page and check that it is installed on a repo you want to have unbug active.
+7. Go to your app page and check that it is installed on a repo you want to have unbug active ("Install tab").
 8. Create a pull request on that repo and check if you get results!
+
+Happy coding!
 
 ### Extra
 
