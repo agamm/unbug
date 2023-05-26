@@ -20,7 +20,7 @@ export async function getBugs(
     max_tokens: 128,
   });
 
-  console.log("DEBUG", completion.data);
+  console.log("DEBUG", completion.data.choices[0].message);
   const res = completion.data?.choices[0]?.message?.content ?? "[]";
   let resultParsed = [];
   try {
