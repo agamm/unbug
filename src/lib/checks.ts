@@ -1,7 +1,7 @@
 import { OpenAIApi } from "openai";
 import { Context } from "probot";
 import { getBugs } from "./ai";
-import { failedCheckRun, getPatchedFile, getPRFiles } from "./github"; //successfullCheckRun
+import { failedCheckRun, getPRFiles } from "./github"; //successfullCheckRun
 
 export async function runPRChecks(
   context: Context<"pull_request">,
