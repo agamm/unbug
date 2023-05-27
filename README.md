@@ -5,9 +5,9 @@ For free? Just follow the installation step below.
 
 ![image](https://github.com/agamm/unbug/assets/1269911/4fe94e90-8366-481b-997c-c0e45d0c0e8d)
 
-✅ Using GPT 3.5 Turbo (waiting for GPT4)
-✅ Integrated with GitHub CI.
-✅ Use your own OpenAI key
+✅ Using GPT 3.5 Turbo (waiting for GPT4).  
+✅ Integrated with GitHub CI.  
+✅ Use your own OpenAI key.  
 ✅ Hostable for free on Render.com
 
 I'm the creator of [Unzip.dev](https://unzip.dev) a developer trends newsletter (3,500+ subs). A few months ago I thought about jumping the LMM hypetrain and create some DevTool in the space. At the time there wasn't a single GitHub marketplace app
