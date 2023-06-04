@@ -1,11 +1,15 @@
 import { ChatCompletionRequestMessage, OpenAIApi } from "openai";
 
-export async function getBugs(openai: OpenAIApi, sourceCode: string) {
+export async function getBugs(openai: OpenAIApi, source_code: string) {
   // Construct the chat messages
   const messages: ChatCompletionRequestMessage[] = [
     {
+      role: "system",
+      content: `Find bugs in the following code.\n- Format results as JSON like so:\n [{"line":1,"reason":"short reason", "type":"type"},...]\n- If you are unsure there is a bug return an empty array.`,
+    },
+    {
       role: "user",
-      content: `You are a senior developer. Check the code for bugs (logic, security, calculation or race condition bugs). Think of how the code would run and where it might have a serious bug and edge case. If you aren't sure there is a bug return an empty list. The result should be only valid JSON format: [{"line":1,"reason":"short reason", "type":"type"},...]\n\`\`\`\n${sourceCode}\`\`\`\n JSON Result:\n`,
+      content: `f'Here is my code:\n${source_code}\n\nJSON Result:\n'`,
     },
   ];
 
