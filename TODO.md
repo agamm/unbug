@@ -1,5 +1,5 @@
-- Add instructions to run it locally.
 - Add AST parsing of context of change (not to send all code).
 - Add syntax checks before sending to GPT.
+- Add heuristics to find language to send oepn ai for better results.
 - Fix rerun rerequested check webhook.
 - Work on very big files.

@@ -5,11 +5,11 @@ export async function getBugs(openai: OpenAIApi, source_code: string) {
   const messages: ChatCompletionRequestMessage[] = [
     {
       role: "system",
-      content: `Find bugs in the following code.\n- Format results as JSON like so:\n [{"line":1,"reason":"short reason", "type":"type"},...]\n- If you are unsure there is a bug return an empty array.`,
+      content: `Find bugs in the user's code.\n- Format results as JSON like so:\n [{"line":1,"reason":"short reason", "type":"type"},...]\n- It is better to return an empty array than a mistake (not really a bug).`,
     },
     {
       role: "user",
-      content: `f'Here is my code:\n${source_code}\n\nJSON Result:\n'`,
+      content: `Here is my code:\n\`\`\`${source_code}\`\`\`\n\nJSON Result:\n`,
     },
   ];
 
@@ -24,6 +24,8 @@ export async function getBugs(openai: OpenAIApi, source_code: string) {
   });
 
   const res = completion.data?.choices[0]?.message?.content ?? "[]";
+
+  console.log("Open AI Result:", res);
   let resultParsed = [];
   try {
     resultParsed = JSON.parse(res);
