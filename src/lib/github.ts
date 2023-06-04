@@ -100,6 +100,25 @@ export async function failedCheckRun(
   );
 }
 
+export async function erroredCheckRun(
+  context: any,
+  error: string,
+  name = "Unbug.io - Bug checks"
+) {
+  await context.octokit.rest.checks.create(
+    context.repo({
+      name: name,
+      head_sha: context.payload.pull_request.head.sha,
+      status: "completed",
+      conclusion: "failure",
+      output: {
+        title: error,
+        summary: "Error in the check.",
+      },
+    })
+  );
+}
+
 export async function getPRFiles(context: any) {
   const pr = context.payload.pull_request;
   if (!pr || pr.state !== "open") return [];

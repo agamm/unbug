@@ -1,7 +1,12 @@
 import { OpenAIApi } from "openai";
 import { Context } from "probot";
 import { getBugs } from "./ai";
-import { failedCheckRun, getPRFiles, successfullCheckRun } from "./github";
+import {
+  erroredCheckRun,
+  failedCheckRun,
+  getPRFiles,
+  successfullCheckRun,
+} from "./github";
 
 export async function runPRChecks(
   context: Context<"pull_request">,
@@ -14,7 +19,14 @@ export async function runPRChecks(
   for (const file of files) {
     console.log(`Got file: ${file.filename}, with  ${file.changes} changes`);
     console.log("Diff:", file.diff);
-    let bugs = await getBugs(openai, file.diff);
+    let bugs;
+    try {
+      bugs = await getBugs(openai, file.diff);
+    } catch (e) {
+      console.error("Error with GPT request", e);
+      erroredCheckRun(context, "GPT request error.");
+      return;
+    }
     bugs = bugs.map((b: any) => ({ ...b, path: file.filename }));
     results.push(...bugs);
 
