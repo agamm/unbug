@@ -13,6 +13,8 @@ export async function getBugs(openai: OpenAIApi, source_code: string) {
     },
   ];
 
+  console.log("Prompt for OpenAI:", messages);
+
   // Create the chat completion
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
