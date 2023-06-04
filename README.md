@@ -9,7 +9,7 @@ For free? Just follow the installation step below.
 ✅ Hostable for free on Render.com
 
 ### Preview Video:
-[![Unbug showcase video](https://github.com/agamm/unbug/assets/1269911/526b9c3d-1a26-4e90-9ca1-c84b0775a79d)](https://www.loom.com/share/c190c9dbc9f54e1d86352de58aee2959 "Unbug showcase video")  
+https://youtu.be/_rXUU6fTUcA
 
 ### Background
 
