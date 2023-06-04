@@ -3,12 +3,13 @@
 Got a code base? Want an automatic bug detector that runs during your CI stage on GitHub?
 For free? Just follow the installation step below.
 
-![image](https://github.com/agamm/unbug/assets/1269911/4fe94e90-8366-481b-997c-c0e45d0c0e8d)
-
 ✅ Using GPT 3.5 Turbo (waiting for GPT4).  
 ✅ Integrated with GitHub CI.  
 ✅ Use your own OpenAI key.  
 ✅ Hostable for free on Render.com
+
+### Preview Video:
+[![Unbug showcase video](https://github.com/agamm/unbug/assets/1269911/526b9c3d-1a26-4e90-9ca1-c84b0775a79d)](https://www.loom.com/share/c190c9dbc9f54e1d86352de58aee2959 "Unbug showcase video")  
 
 ### Background
 
