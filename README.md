@@ -5,15 +5,17 @@ For free? Just follow the installation step below.
 
 ![image](https://github.com/agamm/unbug/assets/1269911/4fe94e90-8366-481b-997c-c0e45d0c0e8d)
 
-✅ Using GPT 3.5 Turbo (waiting for GPT4)
-✅ Integrated with GitHub CI.
-✅ Use your own OpenAI key
+✅ Using GPT 3.5 Turbo (waiting for GPT4).  
+✅ Integrated with GitHub CI.  
+✅ Use your own OpenAI key.  
 ✅ Hostable for free on Render.com
 
-I'm the creator of [Unzip.dev](https://unzip.dev) a developer trends newsletter (3,500+ subs). A few months ago I thought about jumping the LMM hypetrain and create some DevTool in the space. At the time there wasn't a single GitHub marketplace app
+### Background
+
+I'm the creator of [Unzip.dev](https://unzip.dev) a developer trends newsletter (3,500+ subs). A few months ago I thought about jumping the LMM hype train and creating some DevTool in the space. At the time there wasn't a single GitHub marketplace app
 that tackled bug detection (at least not using LLMs). So I decided to build it.
 
-As time passed I started seeing Co-Pilot suggesting they would also get into the CI space and then saw others joining the marketplace. So I decided to give me code for free. Also, there is no reason to create a product that doesn't give 10x value. I belive this still has value, but not 10x like Initialy thought.
+As time passed I started seeing Co-Pilot suggesting they would also get into the CI space and then saw others joining the marketplace. So I decided to give my code for free. Also, there is no reason to create a product that doesn't give 10x value. I believe this still has value, but not 10x like initially  thought.
 
 _May the force be with you, and find all your pesky bugs :pray:_
 
@@ -24,7 +26,7 @@ This should take around 5-10 minutes.
 1. Clone this repo: `git clone git@github.com:agamm/unbug.git`
 2. Create a new [GitHub application](https://github.com/settings/apps/new).
 
-- Fill the webhook url with some value for now (we will change later).
+- Fill the webhook url with some value for now (we will change it later).
 - We need read and write permissions for "Checks", and read permission for "Contents" and "Pull request".
 - Subscribe to "Pull request".
 - Create your App.
@@ -34,7 +36,7 @@ This should take around 5-10 minutes.
 3. Deploy to your favorite provider, I'm using render:
    a. Create a new web service (free could also work).
    b. Connect it to your repo.
-   c. Fill the form, make sure to change the following:
+   c. Fill out the form, and make sure to change the following:
 
    - Branch: `main`
    - Build command: `npm i`
@@ -43,9 +45,9 @@ This should take around 5-10 minutes.
    d. Open 'advanced' and click 'Add Secrets File' (`.env`), also add the `PRIVATE_KEY` secret as an env var.
    e. Deploy (it should not work yet because we need to configure the `.env` file)
 
-4. Now let's fix the webhook url, if you use render copy your url and insert it into the .env (no extra path, mine was `WEBHOOK_PROXY_URL=https://unbug.onrender.com/`) file and upload it as a secret file again.
+4. Now let's fix the webhook URL, if you use render copy your URL and insert it into the .env (no extra path, mine was `WEBHOOK_PROXY_URL=https://unbug.onrender.com/`) file and upload it as a secret file again.
 5. It should deploy it again automatically after adding the valid `.env` file.
-6. Go back to the [application page](https://github.com/settings/apps/) and add the new render url as the webhook url.
+6. Go back to the [application page](https://github.com/settings/apps/) and add the new render URL as the webhook URL.
 7. Go to your app page and check that it is installed on a repo you want to have unbug active ("Install tab").
 8. Create a pull request on that repo and check if you get results!
 
