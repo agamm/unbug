@@ -9,7 +9,7 @@ For free? Just follow the installation step below.
 ✅ Hostable for free on Render.com
 
 ### Preview Video:
-https://youtu.be/_rXUU6fTUcA
+[![Video Preview](https://img.youtube.com/vi/_rXUU6fTUcA/0.jpg)](https://www.youtube.com/watch?v=_rXUU6fTUcA)
 
 ### Background
 
