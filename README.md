@@ -7,6 +7,7 @@ For free? Just follow the installation step below.
 ✅ Integrated with GitHub CI.  
 ✅ Use your own OpenAI key.  
 ✅ Hostable for free on Render.com
+✅ Should work with any language you throw on it.
 
 ### Preview Video:
 [![Video Preview](https://img.youtube.com/vi/_rXUU6fTUcA/0.jpg)](https://www.youtube.com/watch?v=_rXUU6fTUcA)
