@@ -14,10 +14,10 @@ For free? Just follow the installation step below.
 
 ### Background
 
-I'm the creator of [Unzip.dev](https://unzip.dev) a developer trends newsletter (3,500+ subs). A few months ago I thought about jumping the LMM hype train and creating some DevTool in the space. At the time there wasn't a single GitHub marketplace app
+I'm the creator of [Unzip.dev](https://unzip.dev) a developer trends newsletter (3,500+ subs). A few months ago I thought about jumping the LMM hype train. Creating a DevTool in the space sounded interesting. At the time there wasn't a single GitHub marketplace app
 that tackled bug detection (at least not using LLMs). So I decided to build it.
 
-As time passed I started seeing Co-Pilot suggesting they would also get into the CI space and then saw others joining the marketplace. So I decided to give my code for free. Also, there is no reason to create a product that doesn't give 10x value. I believe this still has value, but not 10x like initially  thought.
+As time passed I started seeing Co-Pilot suggesting they would also get into the CI space and then saw others joining the marketplace. So I decided to give my code for free, no reason for you to pay for a thin wrapper on top OpenAI ;)
 
 _May the force be with you, and find all your pesky bugs :pray:_
 
