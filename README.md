@@ -6,7 +6,7 @@ For free? Just follow the installation step below.
 ✅ Using GPT 3.5 Turbo (waiting for GPT4).  
 ✅ Integrated with GitHub CI.  
 ✅ Use your own OpenAI key.  
-✅ Hostable for free on Render.com
+✅ Hostable for free on Render.com  
 ✅ Should work with any language you throw on it.
 
 ### Preview Video:
