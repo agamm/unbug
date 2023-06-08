@@ -17,7 +17,7 @@ For free? Just follow the installation step below.
 I'm the creator of [Unzip.dev](https://unzip.dev) a developer trends newsletter (3,500+ subs). A few months ago I thought about jumping the LMM hype train. Creating a DevTool in the space sounded interesting. At the time there wasn't a single GitHub marketplace app
 that tackled bug detection (at least not using LLMs). So I decided to build it.
 
-As time passed I started seeing Co-Pilot suggesting they would also get into the CI space and then saw others joining the marketplace. So I decided to give my code for free, no reason for you to pay for a thin wrapper on top OpenAI ;)
+As time passed I started seeing Co-Pilot suggesting they would also get into the CI space and then saw others joining the marketplace. So I decided to give my (MVP) code for free, no reason for you to pay for a thin wrapper on top OpenAI ;)
 
 _May the force be with you, and find all your pesky bugs :pray:_
 
