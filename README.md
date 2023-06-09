@@ -52,6 +52,7 @@ This should take around 5-10 minutes.
 6. Go back to the [application page](https://github.com/settings/apps/) and add the new render URL as the webhook URL.
 7. Go to your app page and check that it is installed on a repo you want to have unbug active ("Install tab").
 8. Create a pull request on that repo and check if you get results!
+9. I would recommend to fiddle with `./src/ai.ts`'s prompt variable, so you get better results.
 
 Happy coding!
 
